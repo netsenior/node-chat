@@ -16,10 +16,10 @@ io.on('connection', (socket)=>{
 	console.log('new user connected');
 	
 	// EMITE MENSAGEM PARA AQUELE QUE ACABOU DE CONECTAR
-	socket.emit('newMessage', generateMessage('Admin', 'Welcome to the chat app'));
+	socket.emit('newMessage', generateMessage('Admin', 'Bem vindo ao chat!'));
 	
 	// EMITE MENSAGEM PARA TODOS, EXCETO O QUE ACABOU DE ENTRAR
-	socket.broadcast.emit('newMessage', generateMessage('Admin', 'New user joined'));
+	socket.broadcast.emit('newMessage', generateMessage('Admin', 'Novo usuário entrou no chat'));
 	
 	// LISTENER DE ENVIO DE NOVA MENSAGEM
 	socket.on('createMessage',(message, callback)=>{
